@@ -23,7 +23,7 @@ $ git clone https://github.com/jainiljakasaniya/WorkspaceX.git
 Go to the project directory
 
 ```bash
-$ cd trend-finder
+$ cd WorkspaceX
 ```
 
 Install dependencies
