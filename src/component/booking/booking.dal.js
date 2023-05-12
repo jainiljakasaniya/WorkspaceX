@@ -28,9 +28,9 @@ module.exports = {
     const queryResult = await dbClient.query(sqlQuery, parameters);
     return queryResult.rowCount;
   },
-  createBooking: async (dbClient, newBooking) => {
+  createBooking: async (dbClient, userId, newBooking) => {
     const {
-      userid, roomid, bookingStart, bookingEnd, purpose
+      roomid, bookingStart, bookingEnd, purpose
     } = newBooking;
     const sqlQuery = `
     INSERT
@@ -43,7 +43,7 @@ module.exports = {
         "purpose"
       ) 
     VALUES($1, $2, $3, $4, $5)`;
-    const parameters = [userid, roomid, bookingStart, bookingEnd, purpose];
+    const parameters = [userId, roomid, bookingStart, bookingEnd, purpose];
     const queryResult = await dbClient.query(sqlQuery, parameters);
     return queryResult.rows;
   },

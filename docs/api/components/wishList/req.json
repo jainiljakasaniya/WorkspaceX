@@ -2,10 +2,6 @@
     "AddWishList":{
         "type": "object",
         "properties": {
-          "userid": {
-            "type": "interger",
-            "example": 3
-          },
           "roomid": {
             "type": "interger",
             "example": 4

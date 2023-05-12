@@ -1,5 +1,6 @@
 # WorkspaceX
 ---
+The WorkspaceX is a co-working space management app. It is designed to allow users to book rooms, desk and office amities in a shared workspace. It provides a platform where  users can manage their bookings and interact with other users in the workspace. The app allows users to register and log in to their accounts, book rooms, desk, office amities and manage their bookings. The application also includes features for room management, such as adding new rooms, updating room details, and deleting rooms.
 ## Prerequisites
 
 Make sure you have installed all of the following prerequisites on your machine:

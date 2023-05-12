@@ -12,7 +12,7 @@ module.exports = {
     }
   },
   // add a new booking
-  createBooking: async (reqBody) => {
+  createBooking: async (userId, reqBody) => {
     const dbClient = await dbConnPool.connect();
     try {
       const {
@@ -21,7 +21,7 @@ module.exports = {
       if (await bookingDAL.getExistingSlotBooking(dbClient, roomid, bookingStart, bookingEnd)) {
         throw new Error('CONFLICT');
       }
-      return bookingDAL.createBooking(dbClient, reqBody);
+      return bookingDAL.createBooking(dbClient, userId, reqBody);
     } finally {
       dbClient.release();
     }

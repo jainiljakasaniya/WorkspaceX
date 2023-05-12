@@ -4,7 +4,8 @@ module.exports = {
   addWishList: async (req, res, next) => {
     try {
       const requestBody = req.body;
-      await wishListService.addWishList(requestBody);
+      const { id } = req.user;
+      await wishListService.addWishList(id, requestBody);
       res.status(204).json();
     } catch (error) {
       next(error);

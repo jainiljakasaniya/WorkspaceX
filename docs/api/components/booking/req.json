@@ -2,10 +2,6 @@
   "CreateBooking": {
     "type": "object",
     "properties": {
-      "userid": {
-        "type": "integer",
-        "example": 23
-      },
       "roomid": {
         "type": "integer",
         "example": 5
@@ -27,10 +23,6 @@
   "updateBookingById": {
     "type": "object",
     "properties": {
-      "userid": {
-        "type": "integer",
-        "example": 23
-      },
       "roomid": {
         "type": "integer",
         "example": 5

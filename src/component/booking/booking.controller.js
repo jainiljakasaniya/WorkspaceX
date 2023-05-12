@@ -12,7 +12,8 @@ module.exports = {
   createBooking: async (req, res, next) => {
     try {
       const requestBody = req.body;
-      await bookingService.createBooking(requestBody);
+      const { id } = req.user;
+      await bookingService.createBooking(id, requestBody);
       res.status(204).json();
     } catch (error) {
       next(error);

@@ -4,11 +4,11 @@ const dateHelper = require('../../helper/dateHelper');
 
 module.exports = {
   // To add a room in wishList.
-  addWishList: async (reqBody) => {
+  addWishList: async (userId, reqBody) => {
     const dbClient = await dbConnPool.connect();
     try {
-      const { userid, roomid } = reqBody;
-      return wishlistDAL.addWishList(dbClient, userid, roomid);
+      const { roomid } = reqBody;
+      return wishlistDAL.addWishList(dbClient, userId, roomid);
     } finally {
       dbClient.release();
     }
