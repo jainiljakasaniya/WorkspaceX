@@ -1,4 +1,4 @@
-const dalhelper = require('../../helper/dalHelper');
+const dalHelper = require('../../helper/dalHelper');
 
 module.exports = {
   getAllRoom: async (dbClient) => {
@@ -50,7 +50,7 @@ module.exports = {
       UPDATE
         "room"
       SET
-        ${dalhelper.updateQuery(columns)}
+        ${dalHelper.updateQuery(columns)}
       WHERE
         "id" = $${columns.length + 1}`;
     const queryResult = await dbClient.query(sqlQuery, parameters);
@@ -77,15 +77,15 @@ module.exports = {
     const sqlQuery = `
       SELECT
         "id",
-        "userid",
-        "roomid",
+        "userId",
+        "roomId",
         "bookingStart",
         "bookingEnd",
         "purpose"
       FROM
         "booking"
       WHERE 
-        "roomid" = $1`;
+        "roomId" = $1`;
     const parameters = [roomId];
     const queryResult = await dbClient.query(sqlQuery, parameters);
     return queryResult.rows;

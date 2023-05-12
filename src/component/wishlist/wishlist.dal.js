@@ -3,7 +3,7 @@ const generateNotificationParameters = (occupiedRoomId, wishlist) => {
   const parameterValues = [];
   let count = 1;
   wishlist.forEach(wish => {
-    if (!occupiedRoomId.includes(wish.roomid)) {
+    if (!occupiedRoomId.includes(wish.roomId)) {
       const parameterizedString = `
      (
       $${count},
@@ -13,7 +13,7 @@ const generateNotificationParameters = (occupiedRoomId, wishlist) => {
       notificationParameters.push(parameterizedString);
       parameterValues.push(wish.id);
       parameterValues.push(new Date().toISOString());
-      parameterValues.push(`Room ${wish.roomid} is now available.`);
+      parameterValues.push(`Room ${wish.roomId} is now available.`);
       count += 3;
     }
   });
@@ -22,26 +22,26 @@ const generateNotificationParameters = (occupiedRoomId, wishlist) => {
 };
 
 module.exports = {
-  addWishList: async (dbClient, userid, roomid) => {
+  addWishList: async (dbClient, userId, roomId) => {
     const sqlQuery = `
     INSERT
     INTO
-      "wishList" (userid, roomid)
+      "wishList" ("userId", "roomId")
     VALUES($1, $2);
     `;
-    const parameters = [userid, roomid];
+    const parameters = [userId, roomId];
     const queryResult = await dbClient.query(sqlQuery, parameters);
     return queryResult;
   },
-  deleteWishList: async (dbClient, wishListid) => {
+  deleteWishList: async (dbClient, wishListId) => {
     const sqlQuery = `
     DELETE
     FROM
       "wishList"
     WHERE
-      id = $1
+      "id" = $1
     `;
-    const parameters = [wishListid];
+    const parameters = [wishListId];
     const queryResult = await dbClient.query(sqlQuery, parameters);
     return queryResult;
   },
@@ -51,7 +51,7 @@ module.exports = {
     FROM
        notification
     WHERE
-    "wishListid" = $1
+    "wishListId" = $1
     `;
     const parameters = [wishListId];
     const queryResult = await dbClient.query(sqlQuery, parameters);
@@ -60,11 +60,11 @@ module.exports = {
   checkOccupancy: async (dbClient, currentDate) => {
     const sqlQuery = `
     SELECT
-      w.roomid
+      w."roomId"
     FROM
       "wishList" w
     LEFT JOIN "booking" b ON
-      w.roomid = b.roomid
+      w."roomId" = b."roomId"
     WHERE
       ($1 BETWEEN "bookingStart" AND "bookingEnd")
      `;
@@ -75,9 +75,9 @@ module.exports = {
   getWishList: async (dbClient) => {
     const sqlQuery = `
       SELECT
-        id,
-        userid,
-        roomid
+        "id",
+        "userId",
+        "roomId"
       FROM
         "wishList"
      `;
@@ -92,7 +92,7 @@ module.exports = {
     const sqlQuery = `
       INSERT
       INTO
-        "notification" ("wishListid", createdat, detail)
+        "notification" ("wishListId", "createdAt", "detail")
       VALUES ${strParameterNames}
       `;
     const queryResult = await dbClient.query(sqlQuery, parameterValues);
@@ -102,9 +102,9 @@ module.exports = {
     const sqlQuery = `
     DELETE
     FROM
-      notification
+      "notification"
     WHERE
-      createdat < $1;   
+      "createdAt" < $1;   
     `;
     const parameters = [dateBeforeMonth];
     const queryResult = await dbClient.query(sqlQuery, parameters);

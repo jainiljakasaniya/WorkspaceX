@@ -8,11 +8,11 @@
           "type": "integer",
           "example": 12
         },
-        "userid": {
+        "userId": {
           "type": "integer",
           "example": 23
         },
-        "roomid": {
+        "roomId": {
           "type": "integer",
           "example": 5
         },

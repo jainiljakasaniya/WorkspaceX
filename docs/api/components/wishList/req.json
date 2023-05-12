@@ -2,8 +2,8 @@
     "AddWishList":{
         "type": "object",
         "properties": {
-          "roomid": {
-            "type": "interger",
+          "roomId": {
+            "type": "integer",
             "example": 4
           }
         }

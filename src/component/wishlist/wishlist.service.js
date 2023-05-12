@@ -7,8 +7,8 @@ module.exports = {
   addWishList: async (userId, reqBody) => {
     const dbClient = await dbConnPool.connect();
     try {
-      const { roomid } = reqBody;
-      return wishlistDAL.addWishList(dbClient, userId, roomid);
+      const { roomId } = reqBody;
+      return wishlistDAL.addWishList(dbClient, userId, roomId);
     } finally {
       dbClient.release();
     }
@@ -30,7 +30,7 @@ module.exports = {
       const occupiedRoom = await wishlistDAL.checkOccupancy(dbClient, new Date().toISOString());
       const occupiedRoomId = [];
       occupiedRoom.forEach(room => {
-        occupiedRoomId.push(room.roomid);
+        occupiedRoomId.push(room.roomId);
       });
       const wishlist = await wishlistDAL.getWishList(dbClient);
       await wishlistDAL.addNotification(dbClient, occupiedRoomId, wishlist);

@@ -16,9 +16,9 @@ module.exports = {
     const dbClient = await dbConnPool.connect();
     try {
       const {
-        roomid, bookingStart, bookingEnd
+        roomId, bookingStart, bookingEnd
       } = reqBody;
-      if (await bookingDAL.getExistingSlotBooking(dbClient, roomid, bookingStart, bookingEnd)) {
+      if (await bookingDAL.getExistingSlotBooking(dbClient, roomId, bookingStart, bookingEnd)) {
         throw new Error('CONFLICT');
       }
       return bookingDAL.createBooking(dbClient, userId, reqBody);
@@ -31,9 +31,9 @@ module.exports = {
     const dbClient = await dbConnPool.connect();
     try {
       const {
-        roomid, bookingStart, bookingEnd
+        roomId, bookingStart, bookingEnd
       } = reqBody;
-      if (await bookingDAL.getExistingSlotBooking(dbClient, roomid, bookingStart, bookingEnd)) {
+      if (await bookingDAL.getExistingSlotBooking(dbClient, roomId, bookingStart, bookingEnd)) {
         throw new Error('CONFLICT');
       }
       return bookingDAL.updateBookingById(dbClient, bookingId, reqBody);

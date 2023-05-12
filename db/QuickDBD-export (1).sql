@@ -23,16 +23,16 @@ CREATE TABLE "rooms" (
 
 CREATE TABLE "bookings" (
     "id" SERIAL NOT NULL,
-    "userid" int NOT NULL,
-    "roomid" int NOT NULL,
-    "bookingStart" timestramp NOT NULL,
-    "bookingEnd" timestramp NOT NULL,
+    "userId" int NOT NULL,
+    "roomId" int NOT NULL,
+    "bookingStart" timestamp NOT NULL,
+    "bookingEnd" timestamp NOT NULL,
     "purpose" varchar(200) NOT NULL,
     CONSTRAINT "pk_bookings" PRIMARY KEY ( "id" )
 );
 
-ALTER TABLE "bookings" ADD CONSTRAINT "fk_bookings_userid" FOREIGN KEY("userid")
+ALTER TABLE "bookings" ADD CONSTRAINT "fk_bookings_userId" FOREIGN KEY("userId")
 REFERENCES "user" ("id");
 
-ALTER TABLE "bookings" ADD CONSTRAINT "fk_bookings_roomid" FOREIGN KEY("roomid")
+ALTER TABLE "bookings" ADD CONSTRAINT "fk_bookings_roomId" FOREIGN KEY("roomId")
 REFERENCES "rooms" ("id");

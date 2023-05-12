@@ -3,7 +3,7 @@ const Joi = require('joi');
 module.exports = {
   createBooking: {
     body: Joi.object({
-      roomid: Joi.number().required(),
+      roomId: Joi.number().required(),
       bookingStart: Joi.string().required(),
       bookingEnd: Joi.string().required(),
       purpose: Joi.string().required(),
@@ -14,7 +14,7 @@ module.exports = {
       bookingId: Joi.number().required(),
     }),
     body: Joi.object({
-      roomid: Joi.number(),
+      roomId: Joi.number(),
       bookingStart: Joi.string().required(),
       bookingEnd: Joi.string().required(),
       purpose: Joi.string(),

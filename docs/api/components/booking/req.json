@@ -2,7 +2,7 @@
   "CreateBooking": {
     "type": "object",
     "properties": {
-      "roomid": {
+      "roomId": {
         "type": "integer",
         "example": 5
       },
@@ -23,7 +23,7 @@
   "updateBookingById": {
     "type": "object",
     "properties": {
-      "roomid": {
+      "roomId": {
         "type": "integer",
         "example": 5
       },

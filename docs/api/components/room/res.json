@@ -10,7 +10,7 @@
         },
         "name": {
           "type": "string",
-          "example": "conferance room"
+          "example": "conference room"
         },
         "floor": {
           "type": "integer",
@@ -32,7 +32,7 @@
       },
       "name": {
         "type": "string",
-        "example": "conferance room"
+        "example": "conference room"
       },
       "floor": {
         "type": "integer",
@@ -53,11 +53,11 @@
           "type": "integer",
           "example": 12
         },
-        "userid": {
+        "userId": {
           "type": "integer",
           "example": 23
         },
-        "roomid": {
+        "roomId": {
           "type": "integer",
           "example": 5
         },

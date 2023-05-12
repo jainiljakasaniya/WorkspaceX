@@ -1,12 +1,12 @@
-const dalhelper = require('../../helper/dalHelper');
+const dalHelper = require('../../helper/dalHelper');
 
 module.exports = {
   getAllBooking: async (dbClient) => {
     const sqlQuery = `
       SELECT
         "id",
-        "userid",
-        "roomid",
+        "userId",
+        "roomId",
         "bookingStart",
         "bookingEnd",
         "purpose"
@@ -23,27 +23,27 @@ module.exports = {
         "booking"
       WHERE 
           ($1 < "bookingEnd" AND $2 > "bookingStart") 
-          AND "roomid" = $3`;
+          AND "roomId" = $3`;
     const parameters = [bookingStartDate, bookingEndDate, roomId];
     const queryResult = await dbClient.query(sqlQuery, parameters);
     return queryResult.rowCount;
   },
   createBooking: async (dbClient, userId, newBooking) => {
     const {
-      roomid, bookingStart, bookingEnd, purpose
+      roomId, bookingStart, bookingEnd, purpose
     } = newBooking;
     const sqlQuery = `
     INSERT
     INTO
       "booking" (
-        "userid",
-        "roomid",
+        "userId",
+        "roomId",
         "bookingStart",
         "bookingEnd",
         "purpose"
       ) 
     VALUES($1, $2, $3, $4, $5)`;
-    const parameters = [userId, roomid, bookingStart, bookingEnd, purpose];
+    const parameters = [userId, roomId, bookingStart, bookingEnd, purpose];
     const queryResult = await dbClient.query(sqlQuery, parameters);
     return queryResult.rows;
   },
@@ -54,7 +54,7 @@ module.exports = {
       UPDATE
         "booking"
       SET
-        ${dalhelper.updateQuery(columns)}
+        ${dalHelper.updateQuery(columns)}
       WHERE
         "id" = $${columns.length + 1}`;
     const queryResult = await dbClient.query(sqlQuery, parameters);

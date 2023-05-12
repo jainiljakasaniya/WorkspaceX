@@ -17,11 +17,11 @@
           "type": "integer",
           "example": 12
         },
-        "userid": {
+        "userId": {
           "type": "integer",
           "example": 23
         },
-        "roomid": {
+        "roomId": {
           "type": "integer",
           "example": 5
         },
@@ -49,11 +49,11 @@
           "type": "integer",
           "example": 12
         },
-        "userid": {
+        "userId": {
           "type": "integer",
           "example": 23
         },
-        "roomid": {
+        "roomId": {
           "type": "integer",
           "example": 5
         }
@@ -69,11 +69,11 @@
           "type": "integer",
           "example": 12
         },
-        "wishListid": {
+        "wishListId": {
           "type": "integer",
           "example": 23
         },
-        "createdat": {
+        "createdAt": {
           "type": "timestamp",
           "example": "2023-05-10T23:09:00.289Z"
         },
@@ -81,11 +81,11 @@
           "type": "string",
           "example": "Room 6 is now available."
         },
-        "userid": {
+        "userId": {
           "type": "integer",
           "example": 23
         },
-        "roomid" : {
+        "roomId" : {
           "type": "integer",
           "example": 23
         }

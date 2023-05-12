@@ -47,7 +47,7 @@ module.exports = {
       dbClient.release();
     }
   },
-  // get specific booking details by roomid
+  // get specific booking details by roomId
   getBookingsByRoomId: async (roomId) => {
     const dbClient = await dbConnPool.connect();
     try {

@@ -34,15 +34,15 @@ module.exports = {
     const sqlQuery = `
       SELECT
         "id",
-        "userid",
-        "roomid",
+        "userId",
+        "roomId",
         "bookingStart",
         "bookingEnd",
         "purpose"
       FROM
         "booking"
       WHERE 
-        "userid" = $1`;
+        "userId" = $1`;
     const parameters = [userId];
     const queryResult = await dbClient.query(sqlQuery, parameters);
     return queryResult.rows;
@@ -51,12 +51,12 @@ module.exports = {
     const sqlQuery = `
       SELECT
         "id",
-        "userid",
-        "roomid"
+        "userId",
+        "roomId"
       FROM
         "wishList"
       WHERE 
-        "userid" = $1`;
+        "userId" = $1`;
     const parameters = [userId];
     const queryResult = await dbClient.query(sqlQuery, parameters);
     return queryResult.rows;
@@ -64,17 +64,17 @@ module.exports = {
   getNotificationsListByUserId: async (dbClient, userId) => {
     const sqlQuery = `
     SELECT
-      wl.id,
-      "wishListid",
-      createdat,
-      detail,
-      n.id,
-      userid,
-      roomid
+      wl."id",
+      "wishListId",
+      "createdAt",
+      "detail",
+      n."id",
+      "userId",
+      "roomId"
     FROM
       notification n
-    JOIN "wishList" wl ON n."wishListid" = wl.id
-    WHERE wl.userid = $1`;
+    JOIN "wishList" wl ON n."wishListId" = wl.id
+    WHERE wl."userId" = $1`;
     const parameters = [userId];
     const queryResult = await dbClient.query(sqlQuery, parameters);
     return queryResult.rows;
