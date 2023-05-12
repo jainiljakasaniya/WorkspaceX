@@ -1,0 +1,755 @@
+{
+  "info": {
+    "title": "WorkspaceX - Room Booking",
+    "version": "0.0.1",
+    "description": "WorkspaceX API documentation"
+  },
+  "host": "localhost:3002",
+  "basePath": "/",
+  "apis": [
+    "./src/component/**/*.route.js"
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "swagger": "2.0",
+  "paths": {
+    "/booking": {
+      "get": {
+        "tags": [
+          "booking"
+        ],
+        "summary": "To get list of all bookings.",
+        "responses": {
+          "200": {
+            "description": "successful operation.",
+            "schema": {
+              "$ref": "components/booking/res.json#GetAllBooking"
+            }
+          },
+          "401": {
+            "description": "unauthorized access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "forbidden access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "booking"
+        ],
+        "summary": "To create or add new booking.",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "booking",
+            "description": "booking data",
+            "schema": {
+              "$ref": "components/booking/req.json#CreateBooking"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "successful operation."
+          },
+          "400": {
+            "description": "Bad Request - validation error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ValidationErrorResponse"
+            }
+          },
+          "401": {
+            "description": "unauthorized access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "forbidden access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/booking/{bookingId}": {
+      "put": {
+        "tags": [
+          "booking"
+        ],
+        "summary": "To update details of specific booking",
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "name": "bookingId",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "booking",
+            "description": "booking data",
+            "schema": {
+              "$ref": "components/booking/req.json#CreateBooking"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "successful operation."
+          },
+          "400": {
+            "description": "Bad Request - validation error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ValidationErrorResponse"
+            }
+          },
+          "401": {
+            "description": "unauthorized access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "forbidden access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "booking"
+        ],
+        "summary": "To delete specific booking",
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "name": "bookingId",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "successful operation."
+          },
+          "400": {
+            "description": "Bad Request - validation error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ValidationErrorResponse"
+            }
+          },
+          "401": {
+            "description": "unauthorized access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "forbidden access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/room": {
+      "get": {
+        "tags": [
+          "room"
+        ],
+        "summary": "To get list of all rooms.",
+        "responses": {
+          "200": {
+            "description": "successful operation.",
+            "schema": {
+              "$ref": "components/room/res.json#GetAllRoom"
+            }
+          },
+          "401": {
+            "description": "unauthorized access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "forbidden access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "room"
+        ],
+        "summary": "To create or add new room.",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "room",
+            "description": "room data",
+            "schema": {
+              "$ref": "components/room/req.json#CreateRoom"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "successful operation."
+          },
+          "400": {
+            "description": "Bad Request - validation error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ValidationErrorResponse"
+            }
+          },
+          "401": {
+            "description": "unauthorized access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "forbidden access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/room/{roomId}": {
+      "get": {
+        "tags": [
+          "room"
+        ],
+        "summary": "To get details of specific room",
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "name": "roomId",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation.",
+            "schema": {
+              "$ref": "components/room/res.json#GetRoomById"
+            }
+          },
+          "400": {
+            "description": "Bad Request - validation error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ValidationErrorResponse"
+            }
+          },
+          "401": {
+            "description": "unauthorized access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "forbidden access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "room"
+        ],
+        "summary": "To update details of specific room",
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "name": "roomId",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "room",
+            "description": "room data",
+            "schema": {
+              "$ref": "components/room/req.json#CreateRoom"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "successful operation."
+          },
+          "400": {
+            "description": "Bad Request - validation error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ValidationErrorResponse"
+            }
+          },
+          "401": {
+            "description": "unauthorized access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "forbidden access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "room"
+        ],
+        "summary": "To delete specific room",
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "name": "roomId",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "successful operation."
+          },
+          "400": {
+            "description": "Bad Request - validation error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ValidationErrorResponse"
+            }
+          },
+          "401": {
+            "description": "unauthorized access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "forbidden access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/room/{roomId}/booking": {
+      "get": {
+        "tags": [
+          "room"
+        ],
+        "summary": "To get all bookings of specific room",
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "name": "roomId",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation.",
+            "schema": {
+              "$ref": "components/room/res.json#GetBookingsByRoomId"
+            }
+          },
+          "400": {
+            "description": "Bad Request - validation error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ValidationErrorResponse"
+            }
+          },
+          "401": {
+            "description": "unauthorized access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "forbidden access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/user/register": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "To register new user.",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "user",
+            "description": "user data",
+            "schema": {
+              "$ref": "components/user/req.json#RegisterUser"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "successful operation."
+          },
+          "400": {
+            "description": "Bad Request - validation error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ValidationErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/user/login": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "To login user.",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "user",
+            "description": "user data",
+            "schema": {
+              "$ref": "components/user/req.json#LoginAndTokenGeneration"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation.",
+            "schema": {
+              "$ref": "components/user/res.json#LoginAndTokenGeneration"
+            }
+          },
+          "400": {
+            "description": "Bad Request - validation error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ValidationErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/user/booking": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "To get all bookings of login user.",
+        "responses": {
+          "200": {
+            "description": "successful operation.",
+            "schema": {
+              "$ref": "components/user/res.json#GetBookingsByUserId"
+            }
+          },
+          "400": {
+            "description": "Bad Request - validation error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ValidationErrorResponse"
+            }
+          },
+          "401": {
+            "description": "unauthorized access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "forbidden access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/user/wishList": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "To get all wishlist of login user.",
+        "responses": {
+          "200": {
+            "description": "successful operation.",
+            "schema": {
+              "$ref": "components/user/res.json#GetWishListByUserId"
+            }
+          },
+          "400": {
+            "description": "Bad Request - validation error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ValidationErrorResponse"
+            }
+          },
+          "401": {
+            "description": "unauthorized access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "forbidden access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/user/notifications": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "To get all notifications of login user.",
+        "responses": {
+          "200": {
+            "description": "successful operation.",
+            "schema": {
+              "$ref": "components/user/res.json#GetNotificationsListByUserId"
+            }
+          },
+          "400": {
+            "description": "Bad Request - validation error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ValidationErrorResponse"
+            }
+          },
+          "401": {
+            "description": "unauthorized access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "forbidden access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/wishList": {
+      "post": {
+        "tags": [
+          "wishList"
+        ],
+        "summary": "To create wishlist of login user.",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "booking",
+            "description": "wishlist data",
+            "schema": {
+              "$ref": "components/wishList/req.json#AddWishList"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "successful operation."
+          },
+          "400": {
+            "description": "Bad Request - validation error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ValidationErrorResponse"
+            }
+          },
+          "401": {
+            "description": "unauthorized access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "forbidden access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "wishList"
+        ],
+        "summary": "To delete wishlist.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "wishListId",
+            "description": "wishlist id"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "successful operation."
+          },
+          "400": {
+            "description": "Bad Request - validation error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ValidationErrorResponse"
+            }
+          },
+          "401": {
+            "description": "unauthorized access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "forbidden access.",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "components/errorContracts.json#/ErrorResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "responses": {},
+  "parameters": {},
+  "securityDefinitions": {},
+  "tags": []
+}

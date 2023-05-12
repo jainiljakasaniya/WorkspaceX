@@ -1,0 +1,36 @@
+{
+  "CreateRoom": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "example": "emp"
+      },
+      "floor": {
+        "type": "integer",
+        "example": 15
+      },
+      "capacity": {
+        "type": "integer",
+        "example": 20
+      }
+    }
+  },
+  "updateRoomById": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "example": "emp"
+      },
+      "floor": {
+        "type": "integer",
+        "example": 15
+      },
+      "capacity": {
+        "type": "integer",
+        "example": 20
+      }
+    }
+  }
+}

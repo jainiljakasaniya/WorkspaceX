@@ -1,0 +1,22 @@
+1.
+GET /rooms
+: Returns a list of available rooms with their details (name, description, capacity, location, amenities).
+2.
+GET /rooms/{id}
+: Returns details of a specific room identified by its ID.
+3.
+POST /bookings
+: Creates a new booking for a specific room with the specified start and end times, organizer name, and purpose.
+4.
+GET /bookings
+: Returns a list of all bookings with their details (room name, start and end times, organizer name, purpose).
+5.
+GET /bookings/{id}
+: Returns details of a specific booking identified by its ID.
+6.
+PUT /bookings/{id}
+: Updates the details of a specific booking identified by its ID.
+7.
+DELETE /bookings/{id}
+: Deletes a specific booking identified by its ID.
+The APIs should be secured using authentication and authorization mechanisms to ensure that only authorized users can access and modify the data. The API responses should be in JSON format to enable easy integration with web and mobile clients.

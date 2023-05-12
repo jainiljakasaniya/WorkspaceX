@@ -1,0 +1,36 @@
+{
+  "RegisterUser": {
+    "type": "object",
+    "properties": {
+      "userName": {
+        "type": "string",
+        "example": "emp"
+      },
+      "userEmail": {
+        "type": "string",
+        "example": "emp@gmail.com"
+      },
+      "userPassword": {
+        "type": "string",
+        "example": "12345"
+      },
+      "userRole": {
+        "type": "string",
+        "example": "Employee"
+      }
+    }
+  },
+  "LoginAndTokenGeneration" : {
+    "type": "object",
+    "properties": {
+      "userEmail": {
+        "type": "string",
+        "example": "emp@gmail.com"
+      },
+      "userPassword": {
+        "type": "string",
+        "example": "12345"
+      }
+    }
+  }
+}
