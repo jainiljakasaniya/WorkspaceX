@@ -1,0 +1,519 @@
+{
+	"info": {
+		"_postman_id": "80efc866-1e39-4fe5-aab0-7bc4cd98dd2c",
+		"name": "WorkspaceX",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15645443"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "user register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"emp\",\r\n    \"userEmail\": \"sfsdfsdc@gmail.com\",\r\n    \"userPassword\": \"12345\",\r\n    \"userRole\": \"Admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userEmail\": \"fsfsfsf@gmail.com\",\r\n    \"userPassword\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get specific user bookings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlck5hbWUiOiJlbXAiLCJ1c2VyRW1haWwiOiJmc2ZzZnNmQGdtYWlsLmNvbSIsInVzZXJQYXNzd29yZCI6IiQyYiQxMiRTNUhuMks1b0R5MWZrNnYzZ1B2eDguSjhoVDRJOHo2Q2xWdWthM1MwUERJQjFFc3VBbHlidSIsInVzZXJSb2xlIjoiQWRtaW4iLCJpYXQiOjE2ODM3Nzg3MDd9.wiRInuyWMzZ9PQGPquTIAa5g4r_J062jwYl38Dk4Ljc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/user/booking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get specific user wishlist",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlck5hbWUiOiJlbXAiLCJ1c2VyRW1haWwiOiJmc2ZzZnNmQGdtYWlsLmNvbSIsInVzZXJQYXNzd29yZCI6IiQyYiQxMiRTNUhuMks1b0R5MWZrNnYzZ1B2eDguSjhoVDRJOHo2Q2xWdWthM1MwUERJQjFFc3VBbHlidSIsInVzZXJSb2xlIjoiQWRtaW4iLCJpYXQiOjE2ODM3Nzg3MDd9.wiRInuyWMzZ9PQGPquTIAa5g4r_J062jwYl38Dk4Ljc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/user/wishlist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"wishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get specific user notification",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlck5hbWUiOiJlbXAiLCJ1c2VyRW1haWwiOiJmc2ZzZnNmQGdtYWlsLmNvbSIsInVzZXJQYXNzd29yZCI6IiQyYiQxMiRTNUhuMks1b0R5MWZrNnYzZ1B2eDguSjhoVDRJOHo2Q2xWdWthM1MwUERJQjFFc3VBbHlidSIsInVzZXJSb2xlIjoiQWRtaW4iLCJpYXQiOjE2ODM3Nzg3MDd9.wiRInuyWMzZ9PQGPquTIAa5g4r_J062jwYl38Dk4Ljc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/user/notifications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"notifications"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "room",
+			"item": [
+				{
+					"name": "create new room",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlck5hbWUiOiJlbXAiLCJ1c2VyRW1haWwiOiJmc2ZzZnNmQGdtYWlsLmNvbSIsInVzZXJQYXNzd29yZCI6IiQyYiQxMiRTNUhuMks1b0R5MWZrNnYzZ1B2eDguSjhoVDRJOHo2Q2xWdWthM1MwUERJQjFFc3VBbHlidSIsInVzZXJSb2xlIjoiQWRtaW4iLCJpYXQiOjE2ODM3Nzg3MDd9.wiRInuyWMzZ9PQGPquTIAa5g4r_J062jwYl38Dk4Ljc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Board Rooom\",\r\n    \"floor\": 2,\r\n    \"capacity\": 15\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/room",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "room list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlck5hbWUiOiJlbXAiLCJ1c2VyRW1haWwiOiJmc2ZzZnNmQGdtYWlsLmNvbSIsInVzZXJQYXNzd29yZCI6IiQyYiQxMiRTNUhuMks1b0R5MWZrNnYzZ1B2eDguSjhoVDRJOHo2Q2xWdWthM1MwUERJQjFFc3VBbHlidSIsInVzZXJSb2xlIjoiQWRtaW4iLCJpYXQiOjE2ODM3Nzg3MDd9.wiRInuyWMzZ9PQGPquTIAa5g4r_J062jwYl38Dk4Ljc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/room",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "specific room detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlck5hbWUiOiJlbXAiLCJ1c2VyRW1haWwiOiJlbXBAZ21haWwuY29tIiwidXNlclBhc3N3b3JkIjoiJDJiJDEyJC9DL1lVLjByTm1jbmFIOERJNHdRNU94cDcwbFhZL3dhQTdrYldXYzIvblFDMGdGVml3M2FxIiwidXNlclJvbGUiOiJFbXBsb3llZSIsImlhdCI6MTY4MjkyMzg0OX0.DQ9VIVWQ2738Vcyj0eHXMOMiEnPYm3MBu0IJ3OYHOlY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/room/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"room",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update room details",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlck5hbWUiOiJlbXAiLCJ1c2VyRW1haWwiOiJmc2ZzZnNmQGdtYWlsLmNvbSIsInVzZXJQYXNzd29yZCI6IiQyYiQxMiRTNUhuMks1b0R5MWZrNnYzZ1B2eDguSjhoVDRJOHo2Q2xWdWthM1MwUERJQjFFc3VBbHlidSIsInVzZXJSb2xlIjoiQWRtaW4iLCJpYXQiOjE2ODM3Nzg3MDd9.wiRInuyWMzZ9PQGPquTIAa5g4r_J062jwYl38Dk4Ljc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Server Room\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/room/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"room",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete room",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlck5hbWUiOiJlbXAiLCJ1c2VyRW1haWwiOiJmc2ZzZnNmQGdtYWlsLmNvbSIsInVzZXJQYXNzd29yZCI6IiQyYiQxMiRTNUhuMks1b0R5MWZrNnYzZ1B2eDguSjhoVDRJOHo2Q2xWdWthM1MwUERJQjFFc3VBbHlidSIsInVzZXJSb2xlIjoiQWRtaW4iLCJpYXQiOjE2ODM3Nzg3MDd9.wiRInuyWMzZ9PQGPquTIAa5g4r_J062jwYl38Dk4Ljc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/room/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"room",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "booking",
+			"item": [
+				{
+					"name": "get specific room bookings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlck5hbWUiOiJlbXAiLCJ1c2VyRW1haWwiOiJmc2ZzZnNmQGdtYWlsLmNvbSIsInVzZXJQYXNzd29yZCI6IiQyYiQxMiRTNUhuMks1b0R5MWZrNnYzZ1B2eDguSjhoVDRJOHo2Q2xWdWthM1MwUERJQjFFc3VBbHlidSIsInVzZXJSb2xlIjoiQWRtaW4iLCJpYXQiOjE2ODM3Nzg3MDd9.wiRInuyWMzZ9PQGPquTIAa5g4r_J062jwYl38Dk4Ljc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/room/6/booking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"room",
+								"6",
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create booking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlck5hbWUiOiJlbXAiLCJ1c2VyRW1haWwiOiJhYmNFTWRmQGdtYWlsLmNvbSIsInVzZXJQYXNzd29yZCI6IiQyYiQxMiRGb3U1cGphOU5JNS9XNUVFYVhXTVllRzFULkt1Qi5OLmxRanJydXZwN1o1TFdYd1lQRHhWNiIsInVzZXJSb2xlIjoiRW1wbG95ZWUiLCJpYXQiOjE2ODMxMjE0ODl9.bvJpte8wD-TvYwI-DWd8P13IH29wcpHB6ojEvmudz5k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roomId\": 6,\r\n    \"bookingStart\": \"2023-05-11T19:25:51.960Z\",\r\n    \"bookingEnd\": \"2023-05-11T22:25:51.960Z\",\r\n    \"purpose\": \"xyz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/booking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get booking",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlck5hbWUiOiJlbXAiLCJ1c2VyRW1haWwiOiJmc2ZzZnNmQGdtYWlsLmNvbSIsInVzZXJQYXNzd29yZCI6IiQyYiQxMiRTNUhuMks1b0R5MWZrNnYzZ1B2eDguSjhoVDRJOHo2Q2xWdWthM1MwUERJQjFFc3VBbHlidSIsInVzZXJSb2xlIjoiQWRtaW4iLCJpYXQiOjE2ODM3Nzg3MDd9.wiRInuyWMzZ9PQGPquTIAa5g4r_J062jwYl38Dk4Ljc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/booking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update boking date",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlck5hbWUiOiJlbXAiLCJ1c2VyRW1haWwiOiJmc2ZzZnNmQGdtYWlsLmNvbSIsInVzZXJQYXNzd29yZCI6IiQyYiQxMiRTNUhuMks1b0R5MWZrNnYzZ1B2eDguSjhoVDRJOHo2Q2xWdWthM1MwUERJQjFFc3VBbHlidSIsInVzZXJSb2xlIjoiQWRtaW4iLCJpYXQiOjE2ODM3Nzg3MDd9.wiRInuyWMzZ9PQGPquTIAa5g4r_J062jwYl38Dk4Ljc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roomId\": 6,\r\n    \"bookingStart\": \"2023-04-28T13:18:27.620Z\",\r\n    \"bookingEnd\": \"2023-04-28T15:18:27.620Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/booking/32",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"booking",
+								"32"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete booking",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlck5hbWUiOiJlbXAiLCJ1c2VyRW1haWwiOiJmc2ZzZnNmQGdtYWlsLmNvbSIsInVzZXJQYXNzd29yZCI6IiQyYiQxMiRTNUhuMks1b0R5MWZrNnYzZ1B2eDguSjhoVDRJOHo2Q2xWdWthM1MwUERJQjFFc3VBbHlidSIsInVzZXJSb2xlIjoiQWRtaW4iLCJpYXQiOjE2ODM3Nzg3MDd9.wiRInuyWMzZ9PQGPquTIAa5g4r_J062jwYl38Dk4Ljc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/booking/38",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"booking",
+								"38"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "wishList",
+			"item": [
+				{
+					"name": "create wishlist",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlck5hbWUiOiJlbXAiLCJ1c2VyRW1haWwiOiJmc2ZzZnNmQGdtYWlsLmNvbSIsInVzZXJQYXNzd29yZCI6IiQyYiQxMiRTNUhuMks1b0R5MWZrNnYzZ1B2eDguSjhoVDRJOHo2Q2xWdWthM1MwUERJQjFFc3VBbHlidSIsInVzZXJSb2xlIjoiQWRtaW4iLCJpYXQiOjE2ODM3Nzg3MDd9.wiRInuyWMzZ9PQGPquTIAa5g4r_J062jwYl38Dk4Ljc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roomId\":5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/wishlist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"wishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete wishlist",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlck5hbWUiOiJlbXAiLCJ1c2VyRW1haWwiOiJmc2ZzZnNmQGdtYWlsLmNvbSIsInVzZXJQYXNzd29yZCI6IiQyYiQxMiRTNUhuMks1b0R5MWZrNnYzZ1B2eDguSjhoVDRJOHo2Q2xWdWthM1MwUERJQjFFc3VBbHlidSIsInVzZXJSb2xlIjoiQWRtaW4iLCJpYXQiOjE2ODM3Nzg3MDd9.wiRInuyWMzZ9PQGPquTIAa5g4r_J062jwYl38Dk4Ljc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/wishlist/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"wishlist",
+								"12"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
